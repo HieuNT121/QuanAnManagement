@@ -14,7 +14,7 @@ namespace QuanLyQuanAn
         SqlConnection objConnection = new SqlConnection();
         public DataAccess()
         {
-            string strConnection = @"Data Source=DESKTOP-MC\SQLEXPRESS;Initial Catalog=QuanLyQuanAn;Integrated Security=True";
+            string strConnection = DataAccess.connectionStr;
 
             objConnection = new SqlConnection(strConnection);
 
@@ -71,6 +71,6 @@ namespace QuanLyQuanAn
             return dt;
         }
 
-        public static string connectionStr = @"Data Source=DESKTOP-MC\SQLEXPRESS;Initial Catalog=QuanLyQuanAn;Integrated Security=True";
+        public static string connectionStr = @"Data Source=TRUNG-HIEU\SQLEXPRESS;Initial Catalog = QuanLyQuanAn; Integrated Security = True";
     }
 }

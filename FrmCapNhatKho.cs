@@ -16,7 +16,7 @@ namespace QuanLyQuanAn
     {
         SqlConnection connection = new SqlConnection();
         //SqlCommand command;
-        string str = @"Data Source=DESKTOP-MC\SQLEXPRESS;Initial Catalog=QuanLyQuanAn;Integrated Security=True";
+        string str = DataAccess.connectionStr;
         SqlCommand cmd = null;
         SqlDataAdapter adapter = new SqlDataAdapter();
         DataTable table = new DataTable();

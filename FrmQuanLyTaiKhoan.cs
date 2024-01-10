@@ -109,5 +109,11 @@ namespace QuanLyQuanAn
         {
             Application.Exit();
         }
+
+        private void FrmQuanLyTaiKhoan_Load_1(object sender, EventArgs e)
+        {
+            cbLoaiTaiKhoan.DataSource = listAccountType;
+            LoadListUser();
+        }
     }
 }

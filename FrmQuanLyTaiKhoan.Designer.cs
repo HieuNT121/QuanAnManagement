@@ -234,6 +234,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmQuanLyTaiKhoan";
             this.Text = "FrmQuanLyTaiKhoan";
+            this.Load += new System.EventHandler(this.FrmQuanLyTaiKhoan_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dtvgUser)).EndInit();
             this.flowLayoutPanel3.ResumeLayout(false);
             this.panel19.ResumeLayout(false);
