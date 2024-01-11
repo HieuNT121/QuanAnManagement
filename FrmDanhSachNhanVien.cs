@@ -162,6 +162,7 @@ namespace QuanLyQuanAn
         private void dtgvDanhSachNhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             index = e.RowIndex;
+            if (index < 0) return;
             tbMaNhanVien.Text = dtgvDanhSachNhanVien.Rows[index].Cells[0].Value.ToString();
             tbTenNhanVien.Text = dtgvDanhSachNhanVien.Rows[index].Cells[1].Value.ToString();
             tbGioiTinh.Text = dtgvDanhSachNhanVien.Rows[index].Cells[2].Value.ToString();

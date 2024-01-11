@@ -46,6 +46,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dgvCapNhat = new System.Windows.Forms.DataGridView();
             this.btnKetThuc = new System.Windows.Forms.Button();
+            this.btnXemTatCa = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCapNhat)).BeginInit();
             this.SuspendLayout();
             // 
@@ -209,12 +210,23 @@
             this.btnKetThuc.UseVisualStyleBackColor = true;
             this.btnKetThuc.Click += new System.EventHandler(this.btnKetThuc_Click);
             // 
+            // btnXemTatCa
+            // 
+            this.btnXemTatCa.Location = new System.Drawing.Point(667, 220);
+            this.btnXemTatCa.Name = "btnXemTatCa";
+            this.btnXemTatCa.Size = new System.Drawing.Size(148, 57);
+            this.btnXemTatCa.TabIndex = 26;
+            this.btnXemTatCa.Text = "Xem Tất Cả";
+            this.btnXemTatCa.UseVisualStyleBackColor = true;
+            this.btnXemTatCa.Click += new System.EventHandler(this.btnXemTatCa_Click);
+            // 
             // FrmCapNhatKho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1034, 600);
+            this.Controls.Add(this.btnXemTatCa);
             this.Controls.Add(this.btnKetThuc);
             this.Controls.Add(this.dgvCapNhat);
             this.Controls.Add(this.tbDonGia);
@@ -261,5 +273,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvCapNhat;
         private System.Windows.Forms.Button btnKetThuc;
+        private System.Windows.Forms.Button btnXemTatCa;
     }
 }

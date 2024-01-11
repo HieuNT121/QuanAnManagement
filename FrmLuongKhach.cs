@@ -15,22 +15,24 @@ namespace QuanLyQuanAn
     {
         SqlConnection connection;
         SqlCommand command;
-        string str = @"Data Source=DESKTOP-MC\SQLEXPRESS;Initial Catalog=QuanLyQuanAn;Integrated Security=True";
+        string str = DataAccess.connectionStr;
         SqlDataAdapter adapter = new SqlDataAdapter();
         DataTable table = new DataTable();
 
         void loadData()
         {
-            DateTime s = dtpkStart.Value;
-            string start = s.ToString("yyyy-MM-dd");
-            DateTime e = dtpkEnd.Value;
-            string end = e.ToString("yyyy-MM-dd");
+            int iTongCong = 0;
             command = connection.CreateCommand();
-            command.CommandText = "select * from KhachHang kh join HoaDon hd on kh.MaKhachHang = hd.MaKhachHang where hd.NgayThanhToan between start and end";
+            command.CommandText = "select ThoiGian,LuongKhach from ThongKe where ThoiGian between ' " + dtpkStart.Text + " ' and '" + dtpkEnd.Text + "'";
             adapter.SelectCommand = command;
             table.Clear();
             adapter.Fill(table);
             dtgvLuongKhach.DataSource = table;
+            foreach (DataRow row in table.Rows)
+            {
+                iTongCong += int.Parse(row["LuongKhach"].ToString());
+            }
+            tbLuongKhach.Text = iTongCong.ToString();
         }
         public FrmLuongKhach()
         {

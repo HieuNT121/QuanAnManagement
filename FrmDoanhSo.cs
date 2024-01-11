@@ -16,27 +16,24 @@ namespace QuanLyQuanAn
     {
         SqlConnection connection;
         SqlCommand command;
-        string str = @"Data Source=DESKTOP-MC\SQLEXPRESS;Initial Catalog=QuanLyQuanAn;Integrated Security=True";
+        string str = DataAccess.connectionStr;
         SqlDataAdapter adapter = new SqlDataAdapter();
         DataTable table = new DataTable();
 
         void loadData()
         {
-            int iTongThu = 0;
-            int iTongChi = 0;
+            int iTongCong = 0;
             command = connection.CreateCommand();
-            command.CommandText = "select * from ThongKeDoanhSo where ThoiGian between ' " + dtpStart.Text + " ' and '" + dtpEnd.Text + "'";
+            command.CommandText = "select ThoiGian,TongThu from ThongKe where ThoiGian between ' " + dtpStart.Text + " ' and '" + dtpEnd.Text + "'";
             adapter.SelectCommand = command;
             table.Clear();
             adapter.Fill(table);
             dgvDoanhSo.DataSource = table;
             foreach (DataRow row in table.Rows)
             {
-                iTongChi += int.Parse(row["TongThu"].ToString());
-                iTongChi += int.Parse(row["TongChi"].ToString());
+                iTongCong += int.Parse(row["TongThu"].ToString());
             }
-            tbTongChi.Text = iTongChi.ToString();
-            tbTongThu.Text = iTongThu.ToString();
+            tbTongThu.Text = iTongCong.ToString();
 
         }
         public FrmDoanhSo()

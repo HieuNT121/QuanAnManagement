@@ -18,7 +18,7 @@ namespace QuanLyQuanAn
         public FrmMain()
         {
             InitializeComponent();
-            PhanQuyen();
+            //PhanQuyen();
         }
 
         //private void FrmMain_Load(object sender, EventArgs e)
@@ -66,7 +66,7 @@ namespace QuanLyQuanAn
             }
             else
             {
-                MessageBox.Show("Bạn không phải là quản lý", "Cảnh báo");
+                MessageBox.Show("Bạn không phải là quản lý\nVui lòng quay lại!!!", "Cảnh báo",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
         }
 
@@ -78,7 +78,7 @@ namespace QuanLyQuanAn
             }
             else
             {
-                MessageBox.Show("Bạn không phải là quản lý", "Cảnh báo");
+                MessageBox.Show("Bạn không phải là quản lý\nVui lòng quay lại!!!", "Cảnh báo",MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
         }

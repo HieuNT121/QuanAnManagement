@@ -22,11 +22,11 @@ namespace QuanLyQuanAn
         void loadData()
         {
             string TimKiem = "MaNguyenLieu";
-            if (cbLuaChon.Text == "Tên Hàng Hóa") TimKiem = "TenNguyenLieu";
+            if (cbLuaChon.Text == "Tên Nguyên Liệu") TimKiem = "TenNguyenLieu";
             else if (cbLuaChon.Text == "Nhà Cung Cấp") TimKiem = "MaNhaCungCap";
             else if (cbLuaChon.Text == "Đơn Giá") TimKiem = "DonGia";
             command = connection.CreateCommand();
-            command.CommandText = "select MaNguyenLieu,TenNguyenLieu,MaNhaCungCap,SoLuong,DonGia,NgayNhap from KhoHang where " + TimKiem + "='" + tbThongTinTimKiem.Text + "'";
+            command.CommandText = "select MaNguyenLieu,TenNguyenLieu,MaNhaCungCap,SoLuong,DonGia,NgayNhap from KhoHang where " + TimKiem + "= N'" + tbThongTinTimKiem.Text + "'";
             adapter.SelectCommand = command;
             table.Clear();
             adapter.Fill(table);

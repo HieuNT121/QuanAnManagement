@@ -55,9 +55,9 @@
             this.dtgvHoaDon = new System.Windows.Forms.DataGridView();
             this.btnThanhToan = new System.Windows.Forms.Button();
             this.tbTongTien = new System.Windows.Forms.TextBox();
-            this.tbTenMonAn = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.cbTenMon = new System.Windows.Forms.ComboBox();
             this.flpBan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nUDSoLuong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvHoaDon)).BeginInit();
@@ -310,7 +310,7 @@
             this.dtp.CalendarFont = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp.Location = new System.Drawing.Point(688, 72);
+            this.dtp.Location = new System.Drawing.Point(772, 66);
             this.dtp.Name = "dtp";
             this.dtp.Size = new System.Drawing.Size(224, 34);
             this.dtp.TabIndex = 16;
@@ -346,14 +346,6 @@
             this.tbTongTien.Size = new System.Drawing.Size(208, 27);
             this.tbTongTien.TabIndex = 19;
             // 
-            // tbTenMonAn
-            // 
-            this.tbTenMonAn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTenMonAn.Location = new System.Drawing.Point(447, 133);
-            this.tbTenMonAn.Name = "tbTenMonAn";
-            this.tbTenMonAn.Size = new System.Drawing.Size(185, 27);
-            this.tbTenMonAn.TabIndex = 20;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -376,15 +368,60 @@
             this.label2.TabIndex = 22;
             this.label2.Text = "Tổng Cộng:";
             // 
+            // cbTenMon
+            // 
+            this.cbTenMon.FormattingEnabled = true;
+            this.cbTenMon.Items.AddRange(new object[] {
+            "Cà phê đen",
+            "Trà sữa",
+            "Nước ép cam",
+            "Sinh tố xoài",
+            "Sữa chua trái cây",
+            "Cơm gà",
+            "Bún chả",
+            "Phở bò",
+            "Bánh mì",
+            "Gỏi cuốn",
+            "Nem cuốn",
+            "Bánh xèo",
+            "Bánh canh",
+            "Bánh tráng trộn",
+            "Cơm tấm",
+            "Bún riêu cua",
+            "Mì xào",
+            "Cá kho tộ",
+            "Sườn nướng",
+            "Canh chua",
+            "Chè",
+            "Bánh flan",
+            "Hủ tiếu",
+            "Bún bò Huế",
+            "Cá lóc chiên",
+            "Bánh tráng trộn",
+            "Bánh bèo",
+            "Bánh canh cua",
+            "Bánh đúc",
+            "Bún mắm",
+            "Chả giò",
+            "Bún chả cá",
+            "Cháo lòng",
+            "Bánh canh giò heo",
+            "Bánh flan trứng",
+            "Bánh Bao Cay"});
+            this.cbTenMon.Location = new System.Drawing.Point(553, 78);
+            this.cbTenMon.Name = "cbTenMon";
+            this.cbTenMon.Size = new System.Drawing.Size(193, 24);
+            this.cbTenMon.TabIndex = 23;
+            // 
             // FrmDatDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1034, 638);
+            this.Controls.Add(this.cbTenMon);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.tbTenMonAn);
             this.Controls.Add(this.tbTongTien);
             this.Controls.Add(this.btnThanhToan);
             this.Controls.Add(this.dtgvHoaDon);
@@ -423,7 +460,6 @@
         private System.Windows.Forms.Button btnBan4;
         private System.Windows.Forms.Button btnThanhToan;
         private System.Windows.Forms.TextBox tbTongTien;
-        private System.Windows.Forms.TextBox tbTenMonAn;
         private System.Windows.Forms.Button btnBan5;
         private System.Windows.Forms.Button btnBan6;
         private System.Windows.Forms.Button btnBan7;
@@ -437,5 +473,6 @@
         private System.Windows.Forms.Button btnBan15;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbTenMon;
     }
 }

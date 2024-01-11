@@ -64,14 +64,15 @@
             this.cbLuaChon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbLuaChon.FormattingEnabled = true;
             this.cbLuaChon.Items.AddRange(new object[] {
-            "Mã Hàng Hóa",
-            "Tên Hàng Hóa",
+            "Mã Nguyên Liệu",
+            "Tên Nguyên Liệu",
             "Nhà Cung Cấp",
             "Đơn Giá"});
             this.cbLuaChon.Location = new System.Drawing.Point(218, 76);
             this.cbLuaChon.Name = "cbLuaChon";
             this.cbLuaChon.Size = new System.Drawing.Size(258, 26);
             this.cbLuaChon.TabIndex = 2;
+            this.cbLuaChon.Text = "Mã Nguyên Liệu";
             // 
             // tbThongTinTimKiem
             // 
@@ -98,7 +99,7 @@
             this.dgvTimKiem.Name = "dgvTimKiem";
             this.dgvTimKiem.RowHeadersWidth = 51;
             this.dgvTimKiem.RowTemplate.Height = 24;
-            this.dgvTimKiem.Size = new System.Drawing.Size(554, 373);
+            this.dgvTimKiem.Size = new System.Drawing.Size(740, 373);
             this.dgvTimKiem.TabIndex = 5;
             // 
             // lbTitle
@@ -108,9 +109,9 @@
             this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitle.Location = new System.Drawing.Point(38, 22);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(222, 25);
+            this.lbTitle.Size = new System.Drawing.Size(275, 25);
             this.lbTitle.TabIndex = 6;
-            this.lbTitle.Text = "Tìm kiếm thông tin vật tư";
+            this.lbTitle.Text = "Tìm kiếm thông tin nguyên liệu";
             // 
             // FrmTimKiemVatTu
             // 

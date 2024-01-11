@@ -37,11 +37,8 @@
             this.dgvDoanhSo = new System.Windows.Forms.DataGridView();
             this.btnThongKe = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.tbTongThu = new System.Windows.Forms.TextBox();
-            this.tbTongChi = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.btnIn = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDoanhSo)).BeginInit();
@@ -137,17 +134,6 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Tổng Thu: ";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.White;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(580, 475);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(94, 28);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Tổng Chi:";
-            // 
             // tbTongThu
             // 
             this.tbTongThu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -155,14 +141,6 @@
             this.tbTongThu.Name = "tbTongThu";
             this.tbTongThu.Size = new System.Drawing.Size(193, 27);
             this.tbTongThu.TabIndex = 7;
-            // 
-            // tbTongChi
-            // 
-            this.tbTongChi.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTongChi.Location = new System.Drawing.Point(681, 474);
-            this.tbTongChi.Name = "tbTongChi";
-            this.tbTongChi.Size = new System.Drawing.Size(193, 27);
-            this.tbTongChi.TabIndex = 8;
             // 
             // label5
             // 
@@ -175,21 +153,10 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "VND";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.White;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(884, 474);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 23);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "VND";
-            // 
             // btnIn
             // 
             this.btnIn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIn.Location = new System.Drawing.Point(723, 519);
+            this.btnIn.Location = new System.Drawing.Point(723, 480);
             this.btnIn.Name = "btnIn";
             this.btnIn.Size = new System.Drawing.Size(151, 33);
             this.btnIn.TabIndex = 11;
@@ -203,11 +170,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1034, 600);
             this.Controls.Add(this.btnIn);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.tbTongChi);
             this.Controls.Add(this.tbTongThu);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnThongKe);
             this.Controls.Add(this.dgvDoanhSo);
@@ -233,11 +197,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtpEnd;
         private System.Windows.Forms.Button btnThongKe;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox tbTongChi;
         private System.Windows.Forms.TextBox tbTongThu;
         private System.Windows.Forms.Button btnIn;
     }

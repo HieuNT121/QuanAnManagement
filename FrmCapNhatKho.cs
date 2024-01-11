@@ -49,10 +49,7 @@ namespace QuanLyQuanAn
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
-            //connection.ConnectionString = str;
-            //connection.Open();
             string sql = "Select TenNguyenLieu,DonGia,MaNhaCungCap,SoLuong from KhoHang where MaNguyenLieu = '" + tbMaHangHoa.Text + "'";
-            //string sql = "Select * from KhoHang";
             adapter = new SqlDataAdapter(sql, connection);
             tableTemp.Clear();
             adapter.Fill(tableTemp);
@@ -88,26 +85,35 @@ namespace QuanLyQuanAn
                     sql += SoLuongMoi.ToString() + ",MaNhanVien = '" + tbMaNhanVien.Text + "', NgayNhap = '" + dtp.Text + "' Where MaNguyenLieu = '" + tbMaHangHoa.Text + "'";
                 }
             }
-            cmd = new SqlCommand(sql, connection);
-            cmd.ExecuteNonQuery();
-            row = table.NewRow();
 
-            iTong += int.Parse(tbSoLuong.Text.ToString()) * int.Parse(tbDonGia.Text.ToString());
+            try
+            {
+                cmd = new SqlCommand(sql, connection);
+                cmd.ExecuteNonQuery();
+                row = table.NewRow();
 
-            row["Mã Nguyên Liệu"] = tbMaHangHoa.Text;
-            row["Tên Nguyên Liệu"] = tbTenHangHoa.Text;
-            row["Số Lượng"] = tbSoLuong.Text;
-            row["Đơn Giá"] = tbDonGia.Text;
-            row["Mã Nhà Cung Cấp"] = tbMaNhaCungCap.Text;
-            row["Mã Nhân Viên"] = tbMaNhanVien.Text;
-            row["Ngày Nhập"] = dtp.Text;
-            table.Rows.Add(row);
-            dgvCapNhat.DataSource = table;
+                iTong += int.Parse(tbSoLuong.Text.ToString()) * int.Parse(tbDonGia.Text.ToString());
+
+                row["Mã Nguyên Liệu"] = tbMaHangHoa.Text;
+                row["Tên Nguyên Liệu"] = tbTenHangHoa.Text;
+                row["Số Lượng"] = tbSoLuong.Text;
+                row["Đơn Giá"] = tbDonGia.Text;
+                row["Mã Nhà Cung Cấp"] = tbMaNhaCungCap.Text;
+                row["Mã Nhân Viên"] = tbMaNhanVien.Text;
+                row["Ngày Nhập"] = dtp.Text;
+                table.Rows.Add(row);
+                dgvCapNhat.DataSource = table;
+            }
+            catch
+            {
+                MessageBox.Show("Vui lòng nhập lại dữ liệu", "Chú ý", MessageBoxButtons.OK);
+
+            }
         }
 
         private void btnKetThuc_Click(object sender, EventArgs e)
         {
-            string sql = "SELECT * FROM ThongKeDoanhSo Where ThoiGian = '" + dtp.Text + "'";
+            string sql = "SELECT * FROM ThongKe Where ThoiGian = '" + dtp.Text + "'";
             tableTemp.Clear();
             adapter = new SqlDataAdapter(sql, connection);
             tableTemp.Clear();
@@ -115,16 +121,25 @@ namespace QuanLyQuanAn
             //row = table.Rows[0];
             if (tableTemp.Rows.Count == 0)
             {
-                sql = "INSERT INTO ThongKeDoanhSo (ThoiGian,TongChi) VALUES ('";
-                sql += dtp.Text + "'," + iTong.ToString() + ");";
+                sql = "INSERT INTO ThongKe (ThoiGian,TongChi,TongThu,SoKhach) VALUES ('";
+                sql += dtp.Text + "'," + iTong.ToString() + ",0,0);";
             }
             else
             {
-                sql = "UPDATE ThongKeDoanhSo SET TongChi = " + iTong.ToString() + "Where ThoiGian = '" + dtp.Text + "'"; ;
+                sql = "UPDATE ThongKe SET TongChi = " + iTong.ToString() + "Where ThoiGian = '" + dtp.Text + "'"; ;
             }
             cmd = new SqlCommand(sql, connection);
             cmd.ExecuteNonQuery();
+            MessageBox.Show("Cập nhật dữ liệu Thành Công", "Thông báo", MessageBoxButtons.OK);
         }
 
+        private void btnXemTatCa_Click(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            string sql = "Select MaNguyenLieu,TenNguyenLieu,MaNhaCungCap,SoLuong,DonGia,NgayNhap from KhoHang";
+            adapter = new SqlDataAdapter(sql, connection);
+            adapter.Fill(dt);
+            dgvCapNhat.DataSource = dt;
+        }
     }
 }

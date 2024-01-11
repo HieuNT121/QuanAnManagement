@@ -36,12 +36,9 @@
             this.dtpkStart = new System.Windows.Forms.DateTimePicker();
             this.dtpkEnd = new System.Windows.Forms.DateTimePicker();
             this.btHienThi = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbLuongKhach = new System.Windows.Forms.TextBox();
             this.dtgvLuongKhach = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvLuongKhach)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,7 +109,7 @@
             this.btHienThi.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btHienThi.Image = ((System.Drawing.Image)(resources.GetObject("btHienThi.Image")));
             this.btHienThi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btHienThi.Location = new System.Drawing.Point(58, 115);
+            this.btHienThi.Location = new System.Drawing.Point(644, 107);
             this.btHienThi.Name = "btHienThi";
             this.btHienThi.Size = new System.Drawing.Size(115, 31);
             this.btHienThi.TabIndex = 6;
@@ -120,13 +117,13 @@
             this.btHienThi.UseVisualStyleBackColor = true;
             this.btHienThi.Click += new System.EventHandler(this.btHienThi_Click);
             // 
-            // textBox1
+            // tbLuongKhach
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(187, 533);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(197, 30);
-            this.textBox1.TabIndex = 7;
+            this.tbLuongKhach.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbLuongKhach.Location = new System.Drawing.Point(187, 533);
+            this.tbLuongKhach.Name = "tbLuongKhach";
+            this.tbLuongKhach.Size = new System.Drawing.Size(197, 30);
+            this.tbLuongKhach.TabIndex = 7;
             // 
             // dtgvLuongKhach
             // 
@@ -137,25 +134,6 @@
             this.dtgvLuongKhach.RowTemplate.Height = 24;
             this.dtgvLuongKhach.Size = new System.Drawing.Size(621, 361);
             this.dtgvLuongKhach.TabIndex = 8;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.White;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(53, 577);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(110, 25);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Doanh Thu";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(187, 575);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(197, 30);
-            this.textBox2.TabIndex = 10;
             // 
             // label6
             // 
@@ -168,29 +146,15 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "Khách";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.White;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(407, 576);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(54, 25);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "VND";
-            // 
             // FrmLuongKhach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1107, 611);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.dtgvLuongKhach);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbLuongKhach);
             this.Controls.Add(this.btHienThi);
             this.Controls.Add(this.dtpkEnd);
             this.Controls.Add(this.dtpkStart);
@@ -216,11 +180,8 @@
         private System.Windows.Forms.DateTimePicker dtpkStart;
         private System.Windows.Forms.DateTimePicker dtpkEnd;
         private System.Windows.Forms.Button btHienThi;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbLuongKhach;
         private System.Windows.Forms.DataGridView dtgvLuongKhach;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
     }
 }

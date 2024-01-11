@@ -36,7 +36,11 @@ namespace QuanLyQuanAn
 
         private void btDanhSachNhanVien_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FrmDanhSachNhanVien());
+            if(TypeTaiKhoan.AccountType == "Nhân viên")
+            {
+                MessageBox.Show("Bạn không phải quản lý\nVui lòng quay lại!!!","Cảnh báo",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else OpenChildForm(new FrmDanhSachNhanVien());
         }
 
         private void btDanhSachMonAn_Click(object sender, EventArgs e)

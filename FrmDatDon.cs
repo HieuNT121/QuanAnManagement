@@ -28,11 +28,11 @@ namespace QuanLyQuanAn
         DataTable tableTemp = new DataTable();
 
         int i = 0;
-        Status[] table = new Status[4];
+        Status[] table = new Status[15];
         public FrmDatDon()
         {
             InitializeComponent();
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 15; i++)
             {
                 table[i] = new Status();
             }
@@ -46,7 +46,7 @@ namespace QuanLyQuanAn
             {
                 table[i].status = true;
                 dtgvHoaDon.DataSource = table[i].dt;
-                button.BackColor = Color.Red;
+                button.BackColor = Color.Aqua;
             }
             else
             {
@@ -57,7 +57,7 @@ namespace QuanLyQuanAn
                 }
                 else
                 {
-                    button.BackColor = Color.Aqua;
+                    button.BackColor = Color.IndianRed;
                     table[i].status = false;
                     table[i].ThanhToan = false;
                     table[i].dt.Clear();
@@ -103,8 +103,8 @@ namespace QuanLyQuanAn
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
             table[i].ThanhToan = true;
-            sql = "SELECT * FROM ThongKeDoanhSo Where ThoiGian = '" + dtp.Text + "'";
-            tableTemp.Clear();
+            sql = "SELECT * FROM ThongKe Where ThoiGian = '" + dtp.Text + "'";
+            //tableTemp.Clear();
             adapter = new SqlDataAdapter(sql, connection);
             tableTemp.Clear();
             adapter.Fill(tableTemp);
@@ -112,11 +112,11 @@ namespace QuanLyQuanAn
             if (tableTemp.Rows.Count == 0)
             {
                 sql = "INSERT INTO ThongKe(ThoiGian,TongThu,TongChi,LuongKhach) VALUES ('";
-                sql += dtp.Text + "'," + table[i].iTongTien.ToString() + "',0);";
+                sql += dtp.Text + "'," + table[i].iTongTien.ToString() + "',0,0);";
             }
             else
             {
-                sql = "UPDATE ThongKeDoanhSo SET TongChi = " + table[i].iTongTien.ToString() + "Where ThoiGian = '" + dtp.Text + "'"; ;
+                sql = "UPDATE ThongKe SET TongThu = " + table[i].iTongTien.ToString() + "Where ThoiGian = '" + dtp.Text + "'"; ;
             }
             cmd = new SqlCommand(sql, connection);
             cmd.ExecuteNonQuery();
@@ -125,20 +125,38 @@ namespace QuanLyQuanAn
 
         private void btThemMon_Click(object sender, EventArgs e)
         {
-            sql = "Select DonGia from ThucDon Where TenMonAn = '" + tbTenMonAn.Text + "'";
-            adapter = new SqlDataAdapter(sql, connection);
-            tableTemp.Clear();
-            adapter.Fill(tableTemp);
-            int DonGia = int.Parse(tableTemp.Columns[0].ToString());
+            //int.Parse(dtgvHoaDon.CurrentRow.Cells[1].Value.ToString())
+            //try
+            //{
+                int iDonGia = 0;
+                sql = "select DonGia from ThucDon where TenMonAn = N'" + cbTenMon.Text + "'";
+                adapter = new SqlDataAdapter(sql, connection);
+                tableTemp.Clear();
+                adapter.Fill(tableTemp);
+            dtgvHoaDon.DataSource = tableTemp;
+                foreach(DataRow dr in tableTemp.Rows)
+                {
+                    iDonGia = int.Parse(dr[0].ToString());
+                break;
+                }
 
-            table[i].ThemMonAn(tbTenMonAn.Text, int.Parse(nUDSoLuong.Value.ToString()), DonGia);
-            dtgvHoaDon.DataSource = table[i].dt;
-            dtgvHoaDon.Refresh();
-            foreach (DataRow row in table[i].dt.Rows)
+                dtgvHoaDon.DataSource = tableTemp;
+                dtgvHoaDon.DataSource = table[i].dt;
+                //int DonGia =  int.Parse(tableTemp.Columns["DonGia"].ToString());
+
+                table[i].ThemMonAn(cbTenMon.Text, int.Parse(nUDSoLuong.Value.ToString()), iDonGia);
+                dtgvHoaDon.DataSource = table[i].dt;
+                dtgvHoaDon.Refresh();
+                foreach (DataRow row in table[i].dt.Rows)
+                {
+                    table[i].iTongTien += int.Parse(row[1].ToString()) * int.Parse(row[2].ToString());
+                }
+                tbTongTien.Text = table[i].iTongTien.ToString();
+            /*}
+            catch
             {
-                table[i].iTongTien += int.Parse(row[1].ToString()) * int.Parse(row[2].ToString());
-            }
-            tbTongTien.Text = table[i].iTongTien.ToString();
+                MessageBox.Show("Tên món ăn không hợp lệ, Vui Lòng Nhập lại!!!", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }*/
         }
 
         private void flpBan_Paint(object sender, PaintEventArgs e)

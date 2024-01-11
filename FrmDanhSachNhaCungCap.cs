@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -53,10 +53,16 @@ namespace QuanLyQuanAn
 
         private void btThem_Click(object sender, EventArgs e)
         {
-            command = connection.CreateCommand();
-            command.CommandText = "insert into NhaCungCap values ('" + txtMaNhaCungCap.Text + "', '" + txtTenNhaCungCap.Text + "', '" + txtDiaChi.Text + "', '" + txtSoDienThoai.Text + "')";
-            command.ExecuteNonQuery();
-            loadData();
+            try
+            {
+                command = connection.CreateCommand();
+                command.CommandText = "insert into NhaCungCap values ('" + txtMaNhaCungCap.Text + "', '" + txtTenNhaCungCap.Text + "', '" + txtDiaChi.Text + "', '" + txtSoDienThoai.Text + "')";
+                command.ExecuteNonQuery();
+                loadData();
+            }
+            catch {
+                MessageBox.Show("Vui Lòng Nhập Lại Dữ Liệu", "Chú ý", MessageBoxButtons.OK);
+            }
         }
 
         private void btXoa_Click(object sender, EventArgs e)

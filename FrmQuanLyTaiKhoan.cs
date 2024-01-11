@@ -58,9 +58,26 @@ namespace QuanLyQuanAn
                     type = "Nhân viên";
                     break;
             }
-            Danhsachtaikhoan.Instance.ListTaiKhoan.Add(new Taikhoan(userName, password, type, maNhanVien));
+
+            for (int i = 0; i < Danhsachtaikhoan.Instance.ListTaiKhoan.Count; i++)
+            {
+                if(tbTenTaiKhoan.Text == Danhsachtaikhoan.Instance.ListTaiKhoan[i].TenTaikhoan || tbxMaNhanVIen.Text == Danhsachtaikhoan.Instance.ListTaiKhoan[i].MaNhanVien)
+                {
+                    MessageBox.Show("Tài Khoản Đã Có người dùng", "Thông Báo", MessageBoxButtons.OK);
+                    break;
+                }
+                else if(i == Danhsachtaikhoan.Instance.ListTaiKhoan.Count-1)
+                {
+                    Danhsachtaikhoan.Instance.ListTaiKhoan.Add(new Taikhoan(userName, password, type, maNhanVien));
+                    DataTaiKhoan.CapNhatvaThemDuLieu(Danhsachtaikhoan.Instance.ListTaiKhoan, connectionStr);
+                    LoadListUser();
+                    break;
+                }
+            }
+
+            /*Danhsachtaikhoan.Instance.ListTaiKhoan.Add(new Taikhoan(userName, password, type, maNhanVien));
             DataTaiKhoan.CapNhatvaThemDuLieu(Danhsachtaikhoan.Instance.ListTaiKhoan, connectionStr);
-            LoadListUser();
+            LoadListUser();*/
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -78,6 +95,7 @@ namespace QuanLyQuanAn
                     type = "Nhân viên";
                     break;
             }
+
             Danhsachtaikhoan.Instance.ListTaiKhoan[index].TenTaikhoan = userName;
             Danhsachtaikhoan.Instance.ListTaiKhoan[index].MatKhau = password;
             Danhsachtaikhoan.Instance.ListTaiKhoan[index].PhanLoai = type;
@@ -89,7 +107,7 @@ namespace QuanLyQuanAn
         private void dtvgUser_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             index = e.RowIndex;
-
+            if (index <0) return;
             tbTenTaiKhoan.Text = dtvgUser.Rows[index].Cells[0].Value.ToString();
             tbMatKhau.Text = dtvgUser.Rows[index].Cells[1].Value.ToString();
             cbLoaiTaiKhoan.Text = dtvgUser.Rows[index].Cells[2].Value.ToString();
