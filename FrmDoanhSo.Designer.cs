@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.elipseControl1 = new QuanLyQuanAn.elipseControl();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.dtpStart = new System.Windows.Forms.DateTimePicker();
@@ -46,8 +45,6 @@
             // 
             // elipseControl1
             // 
-            this.elipseControl1.CornerRadius = 15;
-            this.elipseControl1.TargetControl = this;
             // 
             // flowLayoutPanel1
             // 
@@ -189,7 +186,6 @@
 
         #endregion
 
-        private elipseControl elipseControl1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtpStart;
