@@ -112,7 +112,7 @@ namespace QuanLyQuanAn
             if (tableTemp.Rows.Count == 0)
             {
                 sql = "INSERT INTO ThongKe(ThoiGian,TongThu,TongChi,LuongKhach) VALUES ('";
-                sql += dtp.Text + "'," + table[i].iTongTien.ToString() + "',0,0);";
+                sql += dtp.Text + "'," + table[i].iTongTien.ToString() + ",0,0);";
             }
             else
             {
@@ -147,10 +147,7 @@ namespace QuanLyQuanAn
                 table[i].ThemMonAn(cbTenMon.Text, int.Parse(nUDSoLuong.Value.ToString()), iDonGia);
                 dtgvHoaDon.DataSource = table[i].dt;
                 dtgvHoaDon.Refresh();
-                foreach (DataRow row in table[i].dt.Rows)
-                {
-                    table[i].iTongTien += int.Parse(row[1].ToString()) * int.Parse(row[2].ToString());
-                }
+                table[i].iTongTien += iDonGia * int.Parse(nUDSoLuong.Value.ToString());
                 tbTongTien.Text = table[i].iTongTien.ToString();
             /*}
             catch
