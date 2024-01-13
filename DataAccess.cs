@@ -5,9 +5,32 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace QuanLyQuanAn
 {
+
+    public class KetNoiCSDL
+    {
+        public static SqlConnection connect;
+        public static void Connect()
+        {
+            connect = new SqlConnection();
+            connect.ConnectionString = DataAccess.connectionStr;
+            connect.Open();
+            connect.Close();
+        }
+        public static void Disconnect()
+        {
+            if(connect.State == ConnectionState.Open)
+            {
+                connect.Close();
+                connect.Dispose();
+                connect = null;
+            }
+        }
+    }
+
     public class DataAccess
     {
 
@@ -71,6 +94,7 @@ namespace QuanLyQuanAn
             return dt;
         }
 
-        public static string connectionStr = @"Data Source=TRUNG-HIEU\SQLEXPRESS;Initial Catalog = QuanLyQuanAn; Integrated Security = True";
+        //public static string connectionStr = @"Data Source=DESKTOP-CEQKQIM;Initial Catalog=QuanLyQuanAn;Integrated Security=True;Encrypt=False";
+        public static string connectionStr;
     }
 }

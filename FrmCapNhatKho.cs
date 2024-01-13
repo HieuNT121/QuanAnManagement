@@ -121,7 +121,7 @@ namespace QuanLyQuanAn
             //row = table.Rows[0];
             if (tableTemp.Rows.Count == 0)
             {
-                sql = "INSERT INTO ThongKe (ThoiGian,TongChi,TongThu,SoKhach) VALUES ('";
+                sql = "INSERT INTO ThongKe (ThoiGian,TongChi,TongThu,LuongKhach) VALUES ('";
                 sql += dtp.Text + "'," + iTong.ToString() + ",0,0);";
             }
             else
